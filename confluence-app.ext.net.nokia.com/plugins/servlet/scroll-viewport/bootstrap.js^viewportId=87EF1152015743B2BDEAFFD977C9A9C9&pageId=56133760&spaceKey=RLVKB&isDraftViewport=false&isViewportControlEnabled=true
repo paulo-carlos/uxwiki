@@ -1,0 +1,71 @@
+
+
+
+
+(function () {
+    "use strict";
+
+    var body = document.getElementsByTagName('body')[0];
+
+    
+    
+                    
+        var sidebar = (function setupSidebar() {
+            if (!document.getElementById('sp-viewport-control-opener')) {
+
+                body.insertAdjacentHTML('afterbegin', '<div id="sp-viewport-control-opener" style="box-sizing: content-box; position: fixed; background-color: #0065ff; padding: 8px 12px; display: flex; align-items:center; zoom: 1.005; overflow: hidden; top: calc(50% + 64px); left: -98px; text-align: center; cursor: pointer; z-index: 100000; -moz-transform: rotate(90deg); -o-transform: rotate(90deg); -webkit-transform: rotate(90deg); -moz-transform-origin: 100% 0; -o-transform-origin: 100% 0; -webkit-transform-origin: 100% 0;">' +
+                    '<svg style="padding-right: 5px" width="14px" height="14px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="main" transform="translate(-588.000000, -274.000000)" fill="#fff" fill-rule="nonzero"><g id="settings" transform="translate(588.000000, 274.000000)"><path d="M8.7014,13.7007 C5.9384,13.7007 3.6994,11.4607 3.6994,8.6987 C3.6994,5.9357 5.9384,3.6967 8.7014,3.6967 C11.4644,3.6967 13.7034,5.9357 13.7034,8.6987 C13.7034,11.4607 11.4644,13.7007 8.7014,13.7007 M17.0694,10.5837 C16.2864,10.3117 15.7234,9.5747 15.7234,8.6987 C15.7234,7.8227 16.2864,7.0857 17.0684,6.8137 C17.3054,6.7317 17.4514,6.4807 17.3834,6.2397 C17.1844,5.5357 16.9014,4.8687 16.5474,4.2467 C16.4294,4.0387 16.1704,3.9617 15.9494,4.0517 C15.5644,4.2097 15.1194,4.2507 14.6584,4.1327 C13.9844,3.9587 13.4334,3.4097 13.2554,2.7367 C13.1334,2.2737 13.1744,1.8267 13.3314,1.4397 C13.4204,1.2197 13.3434,0.9607 13.1354,0.8427 C12.5184,0.4937 11.8564,0.2137 11.1604,0.0167 C10.9184,-0.0513 10.6684,0.0937 10.5864,0.3307 C10.3144,1.1137 9.5774,1.6767 8.7014,1.6767 C7.8264,1.6767 7.0884,1.1137 6.8174,0.3317 C6.7344,0.0947 6.4834,-0.0513 6.2424,0.0167 C5.5344,0.2167 4.8634,0.5017 4.2384,0.8587 C4.0374,0.9737 3.9524,1.2257 4.0404,1.4407 C4.1874,1.8017 4.2324,2.2137 4.1384,2.6437 C3.9834,3.3497 3.4244,3.9407 2.7254,4.1277 C2.2674,4.2507 1.8274,4.2117 1.4454,4.0597 C1.2254,3.9717 0.9674,4.0497 0.8504,4.2557 C0.4974,4.8777 0.2154,5.5457 0.0174,6.2497 C-0.0506,6.4887 0.0924,6.7367 0.3254,6.8217 C1.0964,7.0997 1.6484,7.8317 1.6484,8.6987 C1.6484,9.5657 1.0964,10.2977 0.3244,10.5757 C0.0914,10.6597 -0.0506,10.9077 0.0164,11.1467 C0.1934,11.7737 0.4384,12.3727 0.7394,12.9367 C0.8584,13.1587 1.1344,13.2347 1.3634,13.1297 C1.9584,12.8567 2.7064,12.8657 3.4674,13.3677 C3.5844,13.4447 3.6924,13.5527 3.7694,13.6687 C4.2964,14.4677 4.2814,15.2487 3.9674,15.8557 C3.8524,16.0787 3.9194,16.3567 4.1354,16.4837 C4.7894,16.8677 5.4974,17.1707 6.2444,17.3807 C6.4854,17.4487 6.7334,17.3047 6.8144,17.0677 C7.0834,16.2817 7.8234,15.7147 8.7014,15.7147 C9.5794,15.7147 10.3194,16.2817 10.5884,17.0677 C10.6694,17.3037 10.9174,17.4487 11.1584,17.3807 C11.8954,17.1737 12.5944,16.8747 13.2424,16.4977 C13.4604,16.3707 13.5264,16.0897 13.4094,15.8667 C13.0914,15.2587 13.0724,14.4737 13.6004,13.6717 C13.6774,13.5557 13.7854,13.4467 13.9024,13.3697 C14.6744,12.8587 15.4294,12.8567 16.0274,13.1397 C16.2564,13.2477 16.5354,13.1727 16.6554,12.9497 C16.9594,12.3857 17.2044,11.7857 17.3834,11.1567 C17.4514,10.9157 17.3064,10.6657 17.0694,10.5837" id="Fill-1"></path></g></g></g></svg>' +
+                    '<span style="color: white; font-size: 12px; font-family: Arial, Helvetica, sans-serif">Viewport Control</span></div>');
+                var opener = document.getElementById('sp-viewport-control-opener');
+                opener.addEventListener("mouseenter", function() {
+                    opener.style.cssText += 'color: white; filter: brightness(1.2)';
+                });
+                opener.addEventListener("mouseleave", function() {
+                    opener.style.cssText += 'color: white; filter: none';
+                });
+            }
+
+            body.insertAdjacentHTML('afterbegin', '<style>@media print { #sp-viewport-control-opener, .sp-viewport-control-container, .sp-blanket { display: none !important; }}</style>');
+            body.insertAdjacentHTML('afterbegin', '<div class="sp-viewport-control-container" style="box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5); display: block; position: fixed; top: 0; left: -21em; height: 100%; width: 20em; z-index: 100001; transition: left 0.5s ease-in-out" />');
+            var containers = document.querySelectorAll('body > div.sp-viewport-control-container');
+            for (var i = 0; i < containers.length; i++) {
+                containers[i].insertAdjacentHTML('afterbegin', '<iframe src="https://confluence-app.ext.net.nokia.com/plugins/servlet/scroll-viewport/control/?viewportId=87EF1152015743B2BDEAFFD977C9A9C9&pageId=56133760&spaceKey=RLVKB" style="height: 100%; width: 100%;" frameBorder="0" />');
+            }
+
+            body.insertAdjacentHTML('beforeend', '<div class="sp-blanket" style="background: #000; height: 100%; left: 0px; opacity: 0.5; position: fixed; top: 0; width: 100%; z-index: 2500; display: none" />');
+
+            return {
+                'expand': function () {
+                    var blankets = document.querySelectorAll('body > div.sp-blanket')
+                    for (var i = 0; i < blankets.length; i++) {
+                        blankets[i].style.display = 'block';
+                    }
+                    var containers = document.querySelectorAll('body > div.sp-viewport-control-container');
+                    for (var j = 0; j < containers.length; j++) {
+                        containers[j].style.cssText += 'left: 0!important';
+                    }
+                },
+                'collapse': function () {
+                    var blankets = document.querySelectorAll('body > div.sp-blanket')
+                    for (var i = 0; i < blankets.length; i++) {
+                        blankets[i].style.display = 'none';
+                    }
+                    var containers = document.querySelectorAll('body > div.sp-viewport-control-container');
+                    for (var j = 0; j < containers.length; j++) {
+                        containers[j].style.cssText += 'left: -21em!important';
+                    }
+                }
+            };
+        })();
+
+        document.getElementById('sp-viewport-control-opener').addEventListener('click', function(e) {
+            sidebar.expand();
+        });
+
+        var blankets = document.querySelectorAll('body > div.sp-blanket');
+        for (var j = 0; j < blankets.length; j++) {
+            blankets[j].addEventListener('click', function(e) {
+                sidebar.collapse();
+            });
+        }
+    })();
